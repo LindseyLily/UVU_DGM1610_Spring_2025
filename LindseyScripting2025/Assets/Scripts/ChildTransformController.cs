@@ -5,6 +5,6 @@ public class ChildTransformController : MonoBehaviour
     private void Update()
     {
         // Rotate the target GameObject
-        transform.Rotate(new Vector3(0, 360, 0) * Time.deltaTime);
+        transform.Rotate(new Vector3(360, 360, 360) * Time.deltaTime);
     }
 }
