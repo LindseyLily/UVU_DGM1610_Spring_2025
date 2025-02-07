@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 521307347}
   - component: {fileID: 521307348}
   - component: {fileID: 521307349}
+  - component: {fileID: 521307350}
   m_Layer: 0
   m_Name: Child2
   m_TagString: Untagged
@@ -351,11 +352,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521307346}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55ead12f108424f4785927922e5f5877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &521307350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521307346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fdf494720f0b44b90678bb27abcc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 300
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +465,7 @@ GameObject:
   - component: {fileID: 735390844}
   - component: {fileID: 735390845}
   - component: {fileID: 735390846}
+  - component: {fileID: 735390847}
   m_Layer: 0
   m_Name: Child1
   m_TagString: Untagged
@@ -535,11 +550,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735390843}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55ead12f108424f4785927922e5f5877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &735390847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735390843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fdf494720f0b44b90678bb27abcc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 300
 --- !u!1 &1136831153
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +579,8 @@ GameObject:
   - component: {fileID: 1136831156}
   - component: {fileID: 1136831155}
   - component: {fileID: 1136831157}
+  - component: {fileID: 1136831158}
+  - component: {fileID: 1136831159}
   m_Layer: 0
   m_Name: ParentObject
   m_TagString: Untagged
@@ -643,6 +673,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc00c13d2a60ec54abefcfe784046561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1136831158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136831153}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0713ebfe49ed7d449bc72901230992b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -2
+  distance: 3
+--- !u!114 &1136831159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136831153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b906f55e6b87de24e850f5a64c85b6e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseSpeed: 1
+  maxScale: 5
+  minScale: 1
 --- !u!1 &1709609251
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +713,7 @@ GameObject:
   - component: {fileID: 1709609252}
   - component: {fileID: 1709609253}
   - component: {fileID: 1709609254}
+  - component: {fileID: 1709609255}
   m_Layer: 0
   m_Name: Child3
   m_TagString: Untagged
@@ -738,11 +798,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709609251}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55ead12f108424f4785927922e5f5877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1709609255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709609251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fdf494720f0b44b90678bb27abcc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 300
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
