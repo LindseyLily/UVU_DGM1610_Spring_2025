@@ -22,6 +22,7 @@ public class CharacterControllerAnimation : MonoBehaviour
         {
             animator.SetTrigger("Run");
         }
+        
         else
         {
             animator.SetTrigger("Idle");
@@ -32,9 +33,17 @@ public class CharacterControllerAnimation : MonoBehaviour
             animator.SetTrigger("Jump");
         }
         //Handle wall jumping
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetTrigger("WallJump");
+            animator.SetTrigger("DoubleJumpTrigger");
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            animator.SetTrigger("FallTrigger");
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            animator.SetTrigger("HitTrigger");
         }
     }
 }
