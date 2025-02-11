@@ -184,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 23510313}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -845,6 +845,7 @@ GameObject:
   - component: {fileID: 1059941987}
   - component: {fileID: 1059941986}
   - component: {fileID: 1059941988}
+  - component: {fileID: 1059941989}
   m_Layer: 0
   m_Name: CharacterArt
   m_TagString: Untagged
@@ -879,8 +880,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fd9270775ee474e99c3c716f4f994e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key1: 275
-  key2: 276
+  key1: 100
+  key2: 97
   direction1: 0
   direction2: 180
 --- !u!212 &1059941987
@@ -960,6 +961,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1059941989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059941984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b6ddf5347b1ce40b20fe785d7ba8d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1518013186
 GameObject:
   m_ObjectHideFlags: 0
