@@ -32,7 +32,12 @@ public class SimpleCharacterController : MonoBehaviour
         //jumping
         if (Input.GetButtonDown("Jump") && controller.isGrounded)
         {
+            Debug.Log("Jumping");
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+        }
+        else
+        {
+            Debug.Log("Not grounded");
         }
     }
 
@@ -45,7 +50,10 @@ public class SimpleCharacterController : MonoBehaviour
         }
         else
             {
-                velocity.y = 0f; //Rest velocity when grounded
+                if (velocity.y < 0f) //Rest velocity when grounded
+                {
+                    velocity.y = 0f;
+                }
             }
             
             //Apply the velocity to the controller
@@ -58,5 +66,12 @@ public class SimpleCharacterController : MonoBehaviour
         var currentPosition = thisTransform.position;
         currentPosition.z = 0f;
         thisTransform.position = currentPosition;
+    }
+
+    private void FixedUpdate()
+    {
+        MoveCharacter();
+        ApplyGravity();
+        KeepCharacterOnXAxis();
     }
 }
