@@ -7,8 +7,8 @@ public class SimpleCharacterController : MonoBehaviour
     public float gravity = -9.81f;
     
     private CharacterController controller;
+    private Vector3 velocity;
     private Transform thisTransform;
-    private Vector3 movementVector = Vector3.zero;
 
     private void Start()
     {
@@ -19,18 +19,42 @@ public class SimpleCharacterController : MonoBehaviour
     private void Update()
     {
         MoveCharacter();
+        ApplyGravity();
         KeepCharacterOnXAxis();
     }
-
     private void MoveCharacter()
     {
-        movementVector.x = Input.GetAxis("Horizontal");
-        movementVector *= (moveSpeed * Time.deltaTime);
-        controller.Move(movementVector);
+        // Horizonal movement
+        var moveInput = Input.GetAxis("Horizontal");
+        var move = new Vector3(x: moveInput, y: 0f, z: 0f) * (moveSpeed * Time.deltaTime);
+        controller.Move(move);
+        
+        //jumping
+        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+        }
+    }
+
+    private void ApplyGravity()
+    {
+        //Apply gravity when not grounded
+        if (!controller.isGrounded)
+        {
+            velocity.y += gravity * Time.deltaTime;
+        }
+        else
+            {
+                velocity.y = 0f; //Rest velocity when grounded
+            }
+            
+            //Apply the velocity to the controller
+            controller.Move(velocity * Time.deltaTime);
     }
 
     private void KeepCharacterOnXAxis()
     {
+        // Keeps character on the same z-axis position
         var currentPosition = thisTransform.position;
         currentPosition.z = 0f;
         thisTransform.position = currentPosition;
