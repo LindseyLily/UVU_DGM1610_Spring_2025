@@ -1,39 +1,48 @@
 using UnityEngine;
+
 [RequireComponent(typeof(CharacterController))] 
 public class SimpleCharacterController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 8f;
     public float gravity = -9.81f;
-    
-    private CharacterController controller;
-    private Vector3 velocity;
-    private Transform thisTransform;
+    public Transform groundCheck; // Add a Transform to check if the player is grounded
+    public float groundDistance = 0.2f; // Adjust the distance for ground checking
+    public LayerMask groundLayer; // Layer mask to check for ground collision
+
+    private CharacterController _controller;
+    private Vector3 _velocity;
+    private Transform _thisTransform;
+    private bool isGrounded;
 
     private void Start()
     {
-        controller = GetComponent<CharacterController>();
-        thisTransform = transform;
+        _controller = GetComponent<CharacterController>();
+        _thisTransform = transform;
     }
 
     private void Update()
     {
+        // Use a raycast to check if the player is grounded
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
+
         MoveCharacter();
         ApplyGravity();
         KeepCharacterOnXAxis();
     }
+
     private void MoveCharacter()
     {
-        // Horizonal movement
+        // Horizontal movement
         var moveInput = Input.GetAxis("Horizontal");
         var move = new Vector3(x: moveInput, y: 0f, z: 0f) * (moveSpeed * Time.deltaTime);
-        controller.Move(move);
-        
-        //jumping
-        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        _controller.Move(move);
+
+        // Jumping
+        if (isGrounded && Input.GetButtonDown("Jump"))
         {
-            Debug.Log("Jumping");
-            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+            Debug.Log("Jump");
+            _velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
         }
         else
         {
@@ -43,35 +52,29 @@ public class SimpleCharacterController : MonoBehaviour
 
     private void ApplyGravity()
     {
-        //Apply gravity when not grounded
-        if (!controller.isGrounded)
+        // Apply gravity when not grounded
+        if (!isGrounded)
         {
-            velocity.y += gravity * Time.deltaTime;
+            _velocity.y += gravity * Time.deltaTime;
         }
         else
+        {
+            // Reset vertical velocity when grounded
+            if (_velocity.y < 0f)
             {
-                if (velocity.y < 0f) //Rest velocity when grounded
-                {
-                    velocity.y = 0f;
-                }
+                _velocity.y = 0f;
             }
-            
-            //Apply the velocity to the controller
-            controller.Move(velocity * Time.deltaTime);
+        }
+
+        // Apply the velocity to the controller
+        _controller.Move(_velocity * Time.deltaTime);
     }
 
     private void KeepCharacterOnXAxis()
     {
         // Keeps character on the same z-axis position
-        var currentPosition = thisTransform.position;
+        var currentPosition = _thisTransform.position;
         currentPosition.z = 0f;
-        thisTransform.position = currentPosition;
-    }
-
-    private void FixedUpdate()
-    {
-        MoveCharacter();
-        ApplyGravity();
-        KeepCharacterOnXAxis();
+        _thisTransform.position = currentPosition;
     }
 }

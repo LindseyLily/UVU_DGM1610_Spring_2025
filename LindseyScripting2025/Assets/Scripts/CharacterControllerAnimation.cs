@@ -38,7 +38,7 @@ public class CharacterControllerAnimation : MonoBehaviour
             animator.SetTrigger("Jump");
         }
        //double jump animation key trigger. No vertical jump
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown("Double Jump"))
         {
             animator.SetTrigger("DoubleJump");
         }
@@ -47,6 +47,7 @@ public class CharacterControllerAnimation : MonoBehaviour
         {
             animator.SetTrigger("Fall");
         }
+
         //hit animation key trigger
         if (Input.GetKeyDown(KeyCode.H))
         {
