@@ -1,8 +1,11 @@
 using UnityEngine;
-
+[RequireComponent(typeof(CharacterController))] 
 public class SimpleCharacterController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float jumpForce = 8f;
+    public float gravity = -9.81f;
+    
     private CharacterController controller;
     private Transform thisTransform;
     private Vector3 movementVector = Vector3.zero;
