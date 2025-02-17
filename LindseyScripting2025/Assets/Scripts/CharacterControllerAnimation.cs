@@ -27,22 +27,24 @@ public class CharacterControllerAnimation : MonoBehaviour
         {
             animator.SetTrigger("Idle");
         }
-      //not yet animated. No vertical jump
+      //jump animation
         if (Input.GetButtonDown("Jump"))
         {
             animator.SetTrigger("Jump");
         }
-        //jump animation key trigger
-        if (Input.GetKeyDown(KeyCode.Space))
+        else
         {
-            animator.SetTrigger("Jump");
+            {
+                animator.SetTrigger("Idle");
+            }
         }
-       //double jump animation key trigger. No vertical jump
-        if (Input.GetKeyDown("Double Jump"))
+    
+       //doesn't work yet
+        if (Input.GetKeyDown("DoubleJump"))
         {
             animator.SetTrigger("DoubleJump");
         }
-        //fall animation key trigger
+        //fall animation key trigger doesn't trigger yet
         if (Input.GetKeyDown(KeyCode.F))
         {
             animator.SetTrigger("Fall");
