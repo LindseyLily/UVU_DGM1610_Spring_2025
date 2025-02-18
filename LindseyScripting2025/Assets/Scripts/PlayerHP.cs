@@ -13,16 +13,16 @@ public class PlayerHP : MonoBehaviour
   }
 
   //Taking damage
-  void TakeDamage()
+  void TakeDamage(int damage)
   {
-    healthSystem.TakeDamage(5);
+    healthSystem.TakeDamage(damage);
     Debug.Log("Current HP after taking damage:" + healthSystem.GetCurrentHP());
   }
   
   //Healing
-  void Heal()
+  void Heal(int healAmount)
   {
-    healthSystem.Heal(5);
+    healthSystem.Heal(healAmount);
     Debug.Log("Current HP after healing:" + healthSystem.GetCurrentHP());
   }
 }

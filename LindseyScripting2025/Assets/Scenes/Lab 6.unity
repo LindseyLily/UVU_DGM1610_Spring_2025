@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 23510316}
   - component: {fileID: 23510315}
   - component: {fileID: 23510314}
+  - component: {fileID: 23510318}
+  - component: {fileID: 23510317}
   m_Layer: 0
   m_Name: CharacterMover
   m_TagString: Player
@@ -205,6 +207,30 @@ Transform:
   - {fileID: 6271535}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &23510317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23510313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ee66902b83495459b97c588fae61c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &23510318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23510313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35f99cdb1d264e4689ac0c78068f00e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &122515638
 GameObject:
   m_ObjectHideFlags: 0
