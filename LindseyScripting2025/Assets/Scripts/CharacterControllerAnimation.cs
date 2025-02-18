@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CharacterControllerAnimation : MonoBehaviour
@@ -28,22 +29,17 @@ public class CharacterControllerAnimation : MonoBehaviour
             animator.SetTrigger("Idle");
         }
       //jump animation
-        if (Input.GetButtonDown("Jump"))
-        {
-            animator.SetTrigger("Jump");
-        }
-        else
-        {
-            {
-                animator.SetTrigger("Idle");
-            }
-        }
-    
-       //doesn't work yet
-        if (Input.GetKeyDown("DoubleJump"))
+      if (Input.GetButtonDown("Jump"))
+      {
+          animator.SetTrigger("Jump");
+      }
+
+      //Double jump animation. No vertical jump yet
+        if (Input.GetKeyDown(KeyCode.J))
         {
             animator.SetTrigger("DoubleJump");
         }
+        
         //fall animation key trigger doesn't trigger yet
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -54,6 +50,11 @@ public class CharacterControllerAnimation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             animator.SetTrigger("Hit");
+        }
+        //Wall jump key trigger
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            animator.SetTrigger("WallJump");
         }
     }
 }

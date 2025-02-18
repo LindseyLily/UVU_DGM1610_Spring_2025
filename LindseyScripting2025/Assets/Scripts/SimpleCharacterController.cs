@@ -9,13 +9,11 @@ public class SimpleCharacterController : MonoBehaviour
     public Transform groundCheck; // Add a Transform to check if the player is grounded
     public float groundDistance = 0.2f; // Adjust the distance for ground checking
     public LayerMask groundLayer; // Layer mask to check for ground collision
-    public Animator animator; // Reference to the Animator for triggering animations
-
+   
     private CharacterController _controller;
     private Vector3 _velocity;
     private Transform _thisTransform;
     private bool isGrounded;
-    private bool isFalling;
 
     private void Start()
     {
@@ -31,7 +29,6 @@ public class SimpleCharacterController : MonoBehaviour
         MoveCharacter();
         ApplyGravity();
         KeepCharacterOnXAxis();
-        UpdateFallState();
     }
 
     private void MoveCharacter()
@@ -72,21 +69,5 @@ public class SimpleCharacterController : MonoBehaviour
         var currentPosition = _thisTransform.position;
         currentPosition.z = 0f;
         _thisTransform.position = currentPosition;
-    }
-
-    private void UpdateFallState()
-    {
-        if (!isGrounded && _velocity.y < 0f && !isFalling)
-        {
-            // Falling animation
-            isFalling = true;
-            animator.SetTrigger("Fall");
-        }
-        else if (isGrounded && isFalling)
-        {
-            // Is grounded
-            isGrounded = true;
-            animator.SetTrigger("Idle");
-        }
     }
 }
