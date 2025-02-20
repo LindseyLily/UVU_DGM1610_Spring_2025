@@ -3,7 +3,7 @@ using UnityEngine;
 public class Saw : MonoBehaviour
 {
     //amount of damage done each hit
-    public int damage = 5;
+    public int damageAmount = 10;
     
     // Collision trigger
     private void OnCollisionEnter(Collision other)
@@ -12,8 +12,8 @@ public class Saw : MonoBehaviour
         if (other.gameObject.TryGetComponent(out HealthSystem healthSystem))
         {
             //Deals damage
-            healthSystem.TakeDamage(damage);
-            Debug.Log("Damage dealt:" + damage);
+            healthSystem.TakeDamage(damageAmount);
+            Debug.Log("Damage dealt:" + damageAmount);
         }
     }
 }
