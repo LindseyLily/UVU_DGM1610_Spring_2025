@@ -215,7 +215,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23510313}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f35f99cdb1d264e4689ac0c78068f00e, type: 3}
   m_Name: 
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23510313}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44bc146e6ba6c5f46bf521a2c7cbe5bb, type: 3}
   m_Name: 
@@ -244,6 +244,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa4fa89eb67ca974b89c5e41b1bc53ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &104382794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 104382796}
+  - component: {fileID: 104382795}
+  m_Layer: 0
+  m_Name: HealthContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &104382795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104382794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f299d7fc6ffec3249be999d4cea546b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthData: {fileID: 11400000, guid: 2e817e2ca6a78de42a5de6acd7a54918, type: 2}
+--- !u!4 &104382796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104382794}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5069768, y: 2.158162, z: 2.6914752}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &122515638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1755,18 @@ MonoBehaviour:
           m_StringArgument: Hit
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 104382795}
+        m_TargetAssemblyTypeName: HealthContainer, Assembly-CSharp
+        m_MethodName: ReduceHealth
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: -1
+          m_StringArgument: Hit
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1333009296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1731,19 +1788,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.38000005, y: 0.38000005, z: 0.20000003}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1333009297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1333009291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f445949f9691e244b854c54949b628fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 10
 --- !u!1 &1518013186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,9 +1974,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 312707107935964473, guid: e807136c9ae764944a2316bba0019777, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1333009294}
-    - targetCorrespondingSourceObject: {fileID: 312707107935964473, guid: e807136c9ae764944a2316bba0019777, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1333009297}
   m_SourcePrefab: {fileID: 100100000, guid: e807136c9ae764944a2316bba0019777, type: 3}
 --- !u!1001 &6628855098431728895
 PrefabInstance:
@@ -2023,3 +2064,4 @@ SceneRoots:
   - {fileID: 23510316}
   - {fileID: 5729643381306900803}
   - {fileID: 6628855098431728895}
+  - {fileID: 104382796}
