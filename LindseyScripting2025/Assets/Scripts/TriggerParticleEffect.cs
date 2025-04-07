@@ -10,7 +10,7 @@ public class TriggerParticleEffect : MonoBehaviour
     public int firstEmissionAmount = 10;
     public int secondEmissionAmount = 20;
     public int thirdEmissionAmount = 30;
-    public float delayBetweenEmissions = 0.1f; // Delay time between emissions
+    public float delayBetweenEmissions = 1f; // Delay time between emissions
 
     private void Start()
     {
