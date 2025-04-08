@@ -1,5 +1,6 @@
 using UnityEngine;
 [CreateAssetMenu]
-public class KeyID : ScriptableObject
+public class Id : ScriptableObject
+
 {
 }
