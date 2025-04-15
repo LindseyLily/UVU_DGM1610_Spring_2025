@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SceneManagement;
+
 
 [RequireComponent(typeof(CharacterController))] 
 public class SimpleCharacterController : MonoBehaviour
@@ -31,7 +31,7 @@ public class SimpleCharacterController : MonoBehaviour
         MoveCharacter();
         ApplyGravity();
         KeepCharacterOnXAxis();
-        
+        QuitGame();
     }
 
     private void MoveCharacter()
@@ -48,9 +48,14 @@ public class SimpleCharacterController : MonoBehaviour
             _velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
         }
     }
-
-
-
+    private void QuitGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+    
     private void ApplyGravity()
     {
         // Apply gravity when not grounded
