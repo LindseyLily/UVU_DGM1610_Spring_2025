@@ -81,4 +81,9 @@ public class SimpleCharacterController : MonoBehaviour
         currentPosition.z = 0f;
         _thisTransform.position = currentPosition;
     }
+    public void BounceFromSpring(float force)
+    {
+        _velocity.y = Mathf.Sqrt(force * -2f * gravity);
+    }
+
 }
