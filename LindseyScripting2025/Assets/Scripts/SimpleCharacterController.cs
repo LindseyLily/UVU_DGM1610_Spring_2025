@@ -27,6 +27,7 @@ public class SimpleCharacterController : MonoBehaviour
     {
         // Check if the player is grounded
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
+        Debug.Log($"isGrounded: {isGrounded}");
         
         MoveCharacter();
         ApplyGravity();
